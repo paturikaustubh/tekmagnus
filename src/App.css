@@ -1,0 +1,9 @@
+.__sidebar {
+  width: 100%;
+  transition: 300ms;
+}
+
+input {
+  outline: 0;
+  border: 0;
+}

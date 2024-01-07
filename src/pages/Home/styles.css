@@ -1,0 +1,26 @@
+.__bar-5 {
+  border-radius: 50%;
+  background: conic-gradient(red 0deg 25deg, green 5deg);
+}
+
+.__bar-25 {
+  border-radius: 50%;
+  background: conic-gradient(red 0deg 50deg, green 5deg);
+}
+
+.__timing-day-button::after {
+  content: attr(pop-data);
+  padding: 0.5rem;
+  position: absolute;
+  transform: translateX(50%);
+  transform: translateY(-120%);
+  background-color: rgb(32 32 32);
+  color: rgb(255 251 235);
+  border-radius: 0.375rem;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.__timing-day-button:hover::after {
+  opacity: 1;
+}
