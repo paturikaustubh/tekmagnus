@@ -36,7 +36,7 @@ export default function AttendanceDash({
           </div>
         </div>
       </div>
-      <div className="lg:col-span-5 col-span-1 lg:border-r h-full pr-4">
+      <div className="lg:col-span-4 col-span-1 lg:border-r h-full pr-4">
         <div className="flex w-full justify-between items-center">
           <span className="text-lg font-[500] text-amber-100">
             Timings (09:30AM - 06:30PM)
@@ -85,7 +85,7 @@ export default function AttendanceDash({
           </div>
         </div>
       </div>
-      <div className="lg:col-span-2 col-span-1">
+      <div className="lg:col-span-3 col-span-1">
         <div className="flex flex-col gap-8 justify-between">
           <div className="text-lg font-[500] text-amber-100 mb-auto">
             Actions
