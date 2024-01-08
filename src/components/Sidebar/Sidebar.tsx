@@ -13,16 +13,16 @@ export default function Sidebar({
   const [mySpaceExpaded, setMySpaceExpanded] = useState(true);
   return (
     <div
-      className={`h-full flex flex-col lg:relative fixed ${
+      className={`h-full flex flex-col lg:relative sticky ${
         openSidebar ? "z-10" : "z-0"
-      } top-0 left-0 container duration-300`}
+      } top-0 container duration-300`}
       style={{
         width: openSidebar ? "auto" : 0,
         transitionDuration: "300ms",
         backgroundColor: "rgb(32 32 32)",
       }}
     >
-      <div className="content">
+      <div className="content sticky top-0">
         <section className="flex items-center justify-center py-12 px-8 bg-transparent">
           <button style={{ width: 150, height: 40 }}>
             <img src={Logo} alt="Logo" className="mx-auto " />
