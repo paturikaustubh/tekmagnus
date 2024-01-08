@@ -1,3 +1,5 @@
+import Logo from "../../assets/favicon.ico";
+
 import "./styles.css";
 import { useState } from "react";
 
@@ -23,7 +25,7 @@ export default function Sidebar({
       <div className="content">
         <section className="flex items-center justify-center py-12 px-8 bg-transparent">
           <button style={{ width: 150, height: 40 }}>
-            <img src="src\assets\favicon.ico" alt="Logo" className="mx-auto " />
+            <img src={Logo} alt="Logo" className="mx-auto " />
           </button>
         </section>
 

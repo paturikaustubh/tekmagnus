@@ -1,3 +1,5 @@
+import Avatar from "../../assets/Kaustubh.jpg";
+
 import { useState } from "react";
 import "./styles.css";
 import { Menu, MenuItem, MenuList } from "@mui/material";
@@ -63,11 +65,7 @@ function Navbar({
         style={{ fontSize: "2em" }}
         onClick={({ currentTarget }) => setAnchorEl(currentTarget)}
       >
-        <img
-          src="src\assets\Kaustubh.jpg"
-          alt="Avatar"
-          className="rounded-full"
-        />
+        <img src={Avatar} alt="Avatar" className="rounded-full" />
       </button>
       <Menu
         open={openMenu}
