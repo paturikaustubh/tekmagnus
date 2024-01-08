@@ -1,8 +1,19 @@
 import Avatar from "../../assets/Kaustubh.jpg";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./styles.css";
-import { Menu, MenuItem, MenuList } from "@mui/material";
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Menu,
+  MenuItem,
+  MenuList,
+  ThemeProvider,
+  createTheme,
+  useMediaQuery,
+} from "@mui/material";
 
 function Navbar({
   setOpenSidebar,
@@ -10,6 +21,18 @@ function Navbar({
   openSidebar: boolean;
   setOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+  const notLarge = useMediaQuery("(max-width:1024px)");
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: "dark",
+        },
+      }),
+    [false]
+  );
+  const [openSearchDialog, setOpenSearchDialog] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const openMenu = Boolean(anchorEl);
   return (
@@ -63,7 +86,7 @@ function Navbar({
       <button
         className="size-8 lg:ml-0 ml-auto rounded-full"
         style={{ fontSize: "2em" }}
-        onClick={({ currentTarget }) => setAnchorEl(currentTarget)}
+        onClick={({ currentTarget }) => notLarge && setAnchorEl(currentTarget)}
       >
         <img src={Avatar} alt="Avatar" className="rounded-full" />
       </button>
@@ -76,9 +99,56 @@ function Navbar({
         <MenuList>
           <MenuItem className="__notification-dot">Notification</MenuItem>
           <MenuItem className="__notification-dot">Messages</MenuItem>
-          <MenuItem>Search</MenuItem>
+          <MenuItem
+            onClick={() => {
+              setOpenSearchDialog(true);
+              setAnchorEl(null);
+            }}
+          >
+            Search
+          </MenuItem>
         </MenuList>
       </Menu>
+      <ThemeProvider theme={theme}>
+        <Dialog
+          open={openSearchDialog}
+          maxWidth="md"
+          fullWidth
+          sx={{ backdropFilter: "blur(3px)" }}
+          className="lg:hidden block"
+        >
+          <DialogTitle component={"div"}>
+            <div className="lg:text-5xl text-orange-400 text-4xl font-bold">
+              Search
+            </div>
+          </DialogTitle>
+          <DialogContent>
+            <div className="flex justify-center items-center mx-auto mt-4">
+              <section className="w-full __gradient-bg border-0 h-12 flex rounded-md bg-neutral-900">
+                <input
+                  type="text"
+                  className="flex-1 bg-transparent"
+                  placeholder="Search"
+                />
+                <button
+                  className="material-symbols-outlined text-neutral-300"
+                  style={{ fontSize: "1.3em" }}
+                >
+                  search
+                </button>
+              </section>
+            </div>
+          </DialogContent>
+          <DialogActions>
+            <button
+              className="text-orange-400 py-2 px-4"
+              onClick={() => setOpenSearchDialog(false)}
+            >
+              Close
+            </button>
+          </DialogActions>
+        </Dialog>
+      </ThemeProvider>
     </nav>
   );
 }
