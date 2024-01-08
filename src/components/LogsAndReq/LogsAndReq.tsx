@@ -14,7 +14,7 @@ function LogsAndReq() {
   });
   return (
     <section className="w-full">
-      <p className="text-2xl text-orange-400">Logs & Requests</p>
+      <p className="text-2xl  text-orange-400">Logs & Requests</p>
       <div className="mt-4 flex w-fit">
         <button className="border rounded-l-md border-neutral-600 bg-orange-400 text-amber-50 px-2 py-1 max-w-44 duration-300">
           Attendance Log
@@ -25,9 +25,7 @@ function LogsAndReq() {
       </div>
       <div className="mt-4 lg:p-4 p-2 border border-neutral-600 rounded-md w-full whitespace-nowrap">
         <div className="flex lg:flex-row flex-col gap-4 w-full justify-around lg:items-center items-start">
-          <span className="text-2xl text-amber-50 font-[500]">
-            January 2024
-          </span>
+          <span className="text-xl text-amber-50 font-[500]">January 2024</span>
           <div className="flex w-full flex-nowrap overflow-auto">
             {["30 Days", "Dec", "Nov", "Oct", "Sept", "Aug", "Jul"].map(
               (month, indx) => (
@@ -38,7 +36,7 @@ function LogsAndReq() {
                       : indx === 6
                       ? "rounded-r-md"
                       : ""
-                  } border border-neutral-600`}
+                  } border border-neutral-600 text-sm`}
                   key={indx}
                 >
                   {month}
@@ -46,7 +44,7 @@ function LogsAndReq() {
               )
             )}
           </div>
-          <span className="flex items-center">
+          <span className="flex items-center text-sm">
             <button className="border border-neutral-600 rounded-l-md p-4 size-10 flex items-center justify-center text-amber-50 bg-orange-400">
               <span className="material-symbols-outlined">list</span>
             </button>
@@ -89,7 +87,7 @@ function LogsAndReq() {
                 </CustCell>
                 <CustCell>
                   <div className="flex items-center gap-3">
-                    <span className="__bar-5 md:size-7 size-5"></span>9hrs 15m
+                    <span className="__bar-5 md:size-6 size-4"></span>9hrs 15m
                   </div>
                 </CustCell>
                 <CustCell>9hrs 59min</CustCell>
@@ -126,7 +124,7 @@ function LogsAndReq() {
                 </CustCell>
                 <CustCell>
                   <div className="flex items-center gap-3">
-                    <span className="__bar-25 md:size-7 size-5"></span>7hrs 45m
+                    <span className="__bar-25 md:size-6 size-4"></span>7hrs 45m
                   </div>
                 </CustCell>
                 <CustCell>9hrs</CustCell>
@@ -201,7 +199,7 @@ function LogsAndReq() {
                 </CustCell>
                 <CustCell>
                   <div className="flex items-center gap-3">
-                    <span className="md:size-7 size-5 __bar-25"></span>8hrs
+                    <span className="md:size-6 size-4 __bar-25"></span>8hrs
                     20min
                   </div>
                 </CustCell>

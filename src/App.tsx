@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Home from "./pages/Home/Home";
 
 function App() {
-  const [openSidebar, setOpenSidebar] = useState(true);
+  const [openSidebar, setOpenSidebar] = useState(false);
 
   return (
     <main className="flex pb-4">

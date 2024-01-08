@@ -77,11 +77,11 @@ export default function AttendanceDash({
         </div>
         <div className="w-full border border-neutral-600 p-2 rounded-md mt-4 bg-neutral-900">
           <div className="flex justify-around gap-4 items-center w-full h-12">
-            <span className="md:text-base text-sm">Duration: 9hrs 0m</span>
-            <span className="lg:text-2xl text-lg text-orange-400">
+            <span className="">Duration: 9hrs 0m</span>
+            <span className="text-xl text-orange-400">
               {curDtTime.format("hh:mm:ss A")}
             </span>
-            <span className="md:text-base text-sm">Break: 0m</span>
+            <span className="">Break: 0m</span>
           </div>
         </div>
       </div>
@@ -91,10 +91,10 @@ export default function AttendanceDash({
             Actions
           </div>
           <div className="flex flex-col gap-1 mt-auto">
-            <button className="hover:bg-orange-400 hover:text-amber-50 duration-300 flex items-center justify-center p-2 rounded-md border border-neutral-600">
+            <button className="hover:bg-orange-400 text-sm hover:text-amber-50 duration-300 flex items-center justify-center p-2 rounded-md border border-neutral-600">
               Leave Request
             </button>
-            <button className="hover:bg-orange-400 hover:text-amber-50 duration-300 flex items-center justify-center p-2 rounded-md border border-neutral-600">
+            <button className="hover:bg-orange-400 text-sm hover:text-amber-50 duration-300 flex items-center justify-center p-2 rounded-md border border-neutral-600">
               Work From Home
             </button>
           </div>
